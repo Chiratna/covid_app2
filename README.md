@@ -1,6 +1,6 @@
 # covid_app
 
-A new Flutter application that tracks abd shows the covid cases in india and in its states
+A new Flutter application that tracks and shows the covid cases in india and in its states
 
 ## Screenshots
 

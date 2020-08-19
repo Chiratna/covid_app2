@@ -1,7 +1,7 @@
-import 'package:covid_app/providers/india_covid_data_provider.dart';
-import 'package:covid_app/widgets/confirmed_cases.dart';
-import 'package:covid_app/widgets/heading_msg.dart';
-import 'package:covid_app/widgets/state_item.dart';
+import '../providers/india_covid_data_provider.dart';
+import '../widgets/confirmed_cases.dart';
+import '../widgets/heading_msg.dart';
+import '../widgets/state_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool _initState = true;
+  TextEditingController searchController;
 
   @override
   void didChangeDependencies() {
@@ -45,6 +46,41 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverList(
               delegate: SliverChildListDelegate([
                 HeadingMsgContainer(),
+                Container(
+                  margin: EdgeInsets.all(16),
+                  child: TextField(
+                    controller: searchController,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Poppins',
+                      fontSize: 23,
+                    ),
+                    decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                          color: Colors.white,
+                        )),
+                        disabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                          color: Colors.white,
+                        )),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                          color: Colors.white,
+                        )),
+                        labelStyle: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontSize: 20,
+                        ),
+                        labelText: 'Search',
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                          size: 30,
+                        )),
+                  ),
+                ),
                 ConfirmedCases(),
                 Container(
                   margin: EdgeInsets.all(24),

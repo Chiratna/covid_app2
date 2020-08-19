@@ -1,7 +1,10 @@
-import 'package:covid_app/providers/india_covid_data_provider.dart';
-import 'package:covid_app/screens/try1.dart';
+import 'package:covid_app/providers/chartDataProvider.dart';
+import 'package:covid_app/providers/distDataProvider.dart';
+import 'package:covid_app/providers/stateDailyModel.dart';
+
+import './providers/india_covid_data_provider.dart';
+import './screens/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -12,12 +15,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarBrightness: Brightness.dark,
-      statusBarColor: Colors.black,
-    ));
-    return ChangeNotifierProvider(
-      create: (context) => IndiaCovidDataProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => IndiaCovidDataProvider()),
+        ChangeNotifierProvider(
+          create: (context) => ChartDataProvider(),
+        ),
+        ChangeNotifierProvider(create: (context) => DistricDataProvider())
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

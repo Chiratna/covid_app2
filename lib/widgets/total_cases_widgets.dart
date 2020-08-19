@@ -1,4 +1,4 @@
-import 'package:covid_app/providers/covidModel.dart';
+import '../providers/covidModel.dart';
 import 'package:flutter/material.dart';
 
 class TotalCases extends StatelessWidget {

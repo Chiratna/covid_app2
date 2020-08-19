@@ -1,11 +1,12 @@
-import 'package:covid_app/providers/covidModel.dart';
-import 'package:covid_app/services/api_fetch.dart';
+import './covidModel.dart';
+import '../services/api_fetch.dart';
 import 'package:flutter/material.dart';
 
 class IndiaCovidDataProvider with ChangeNotifier {
   IndiaCovidDataProvider();
 
   List<Statewise> stateWiseData = [];
+  List<Statewise> filteredState = [];
   bool isfetching = true;
 
   Future<List<Statewise>> getData() async {
@@ -15,6 +16,11 @@ class IndiaCovidDataProvider with ChangeNotifier {
   }
 
   List<Statewise> get stateList {
+    return List.from(
+        stateWiseData.where((element) => element.statecode != 'TT'));
+  }
+
+  List<Statewise> get totalCount {
     return [...stateWiseData];
   }
 }

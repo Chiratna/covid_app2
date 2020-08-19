@@ -1,8 +1,9 @@
-import 'package:covid_app/providers/india_covid_data_provider.dart';
-import 'package:covid_app/widgets/ActiveCaseHeading.dart';
-import 'package:covid_app/widgets/DeathHeading.dart';
-import 'package:covid_app/widgets/RecoveredHeading.dart';
-import 'package:covid_app/widgets/total_cases_widgets.dart';
+import '../providers/india_covid_data_provider.dart';
+import './ActiveCaseHeading.dart';
+import './DeathHeading.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import './RecoveredHeading.dart';
+import './total_cases_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,10 +11,13 @@ class ConfirmedCases extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<IndiaCovidDataProvider>(context);
-    final stateData = data.stateList;
+    final stateData = data.totalCount;
     return data.isfetching
         ? Center(
-            child: CircularProgressIndicator(),
+            child: SpinKitWave(
+              color: Colors.white,
+              size: 23,
+            ),
           )
         : Column(
             children: <Widget>[

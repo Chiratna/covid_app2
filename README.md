@@ -2,7 +2,7 @@
 
 A new Flutter application that tracks and shows the covid cases in india and in its states.
 
-All the data are obtained from api of covid19india.org
+All the data are obtained using diff api of  https://api.covid19india.org/ .
 
 
 

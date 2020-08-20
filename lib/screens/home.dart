@@ -57,41 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverList(
               delegate: SliverChildListDelegate([
                 HeadingMsgContainer(),
-                Container(
-                  margin: EdgeInsets.all(16),
-                  child: TextField(
-                    controller: searchController,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontSize: 23,
-                    ),
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                          color: Colors.white,
-                        )),
-                        disabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                          color: Colors.white,
-                        )),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                          color: Colors.white,
-                        )),
-                        labelStyle: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Poppins',
-                          fontSize: 20,
-                        ),
-                        labelText: 'Search',
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: Colors.white,
-                          size: 30,
-                        )),
-                  ),
-                ),
                 ConfirmedCases(),
                 Container(
                   margin: EdgeInsets.all(24),
@@ -113,3 +78,39 @@ class _HomeScreenState extends State<HomeScreen> {
         ));
   }
 }
+
+// Container(
+//                   margin: EdgeInsets.all(16),
+//                   child: TextField(
+//                     controller: searchController,
+//                     style: TextStyle(
+//                       color: Colors.white,
+//                       fontFamily: 'Poppins',
+//                       fontSize: 23,
+//                     ),
+//                     decoration: InputDecoration(
+//                         enabledBorder: OutlineInputBorder(
+//                             borderSide: BorderSide(
+//                           color: Colors.white,
+//                         )),
+//                         disabledBorder: OutlineInputBorder(
+//                             borderSide: BorderSide(
+//                           color: Colors.white,
+//                         )),
+//                         focusedBorder: OutlineInputBorder(
+//                             borderSide: BorderSide(
+//                           color: Colors.white,
+//                         )),
+//                         labelStyle: TextStyle(
+//                           color: Colors.white,
+//                           fontFamily: 'Poppins',
+//                           fontSize: 20,
+//                         ),
+//                         labelText: 'Search',
+//                         prefixIcon: Icon(
+//                           Icons.search,
+//                           color: Colors.white,
+//                           size: 30,
+//                         )),
+//                   ),
+//                 ),

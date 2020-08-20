@@ -43,6 +43,14 @@ class About extends StatelessWidget {
                 color: Colors.white),
           ),
           Text(
+            'Chakraborty',
+            style: TextStyle(
+                fontSize: 37.0,
+                fontFamily: 'Pacifico',
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+          ),
+          Text(
             'FLUTTER DEVELOPER',
             style: TextStyle(
                 fontSize: 20.0,

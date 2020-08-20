@@ -1,7 +1,8 @@
-import 'package:covid_app/providers/covidModel.dart';
-import 'package:covid_app/providers/distDataProvider.dart';
-import 'package:covid_app/screens/chartScreen.dart';
-import 'package:covid_app/screens/stateView.dart';
+import '../providers/covidModel.dart';
+import '../providers/distDataProvider.dart';
+import './about.dart';
+import './chartScreen.dart';
+import './stateView.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -67,6 +68,14 @@ class _StateDetailsScreenState extends State<StateDetailsScreen> {
           ),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(FontAwesomeIcons.user),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (ctx) => About()));
+              })
+        ],
       ),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(

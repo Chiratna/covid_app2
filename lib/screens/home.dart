@@ -1,3 +1,6 @@
+import './about.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../providers/india_covid_data_provider.dart';
 import '../widgets/confirmed_cases.dart';
 import '../widgets/heading_msg.dart';
@@ -40,6 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           centerTitle: true,
           elevation: 0,
+          actions: [
+            IconButton(
+                icon: Icon(FontAwesomeIcons.user),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => About()));
+                })
+          ],
         ),
         body: CustomScrollView(
           slivers: <Widget>[

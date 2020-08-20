@@ -1,6 +1,7 @@
 import 'package:covid_app/providers/chartDataProvider.dart';
 import 'package:covid_app/providers/distDataProvider.dart';
 import 'package:covid_app/providers/stateDailyModel.dart';
+import 'package:covid_app/screens/about.dart';
 
 import './providers/india_covid_data_provider.dart';
 import './screens/home.dart';
